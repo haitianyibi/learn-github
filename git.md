@@ -1,4 +1,4 @@
-#安装Git
+#安装Git  
 linux使用yum
 $sudo yum install git
 使用apt-get安装
