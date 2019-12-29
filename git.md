@@ -89,4 +89,20 @@ git remote  -v 显示origin表示克隆仓库的默认名字，已经克隆到�
 
 git remote add 简写名字 URL 添加远程仓库并设置简名代替URL，
 
-git fetch 简名  拉取简名代替的URL内容。
+git fetch 简名  拉取简名代替的URL内容。仅将远程仓库复制本地不会合并修改当前工作。
+
+使用git clone 会自动克隆仓库并添加远程仓库，设置简名origin
+
+git pull origin master 备份到服务器master分支，若以有人先pull后，本地版本和服务器版本不同，需要拉取下来合并后才能推送，
+
+git remote show origin 显示更多远程仓库信息。
+
+git remote rename origin abc   远程仓库重命名将origin修改为abc
+
+git remote rm 简名  移除远程仓库的指向 ，本质远程仓库还在，如不在未某个仓库贡献了。
+
+# 标签
+
+# 分支
+
+git branch 分支名  创建分支
