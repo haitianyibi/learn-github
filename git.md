@@ -83,3 +83,10 @@ git rm 文件名.文件类型
 
 git log 
 
+# 远程仓库
+
+git remote  -v 显示origin表示克隆仓库的默认名字，已经克隆到本地。-v显示URL。
+
+git remote add 简写名字 URL 添加远程仓库并设置简名代替URL，
+
+git fetch 简名  拉取简名代替的URL内容。
