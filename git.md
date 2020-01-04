@@ -12,6 +12,65 @@ git是 [Linus Torvalds]([https://baike.baidu.com/item/%E6%9E%97%E7%BA%B3%E6%96%A
 
 git易于学习，功能强大。它远远高出[Subversion](http://subversion.apache.org/)、[CVS](http://www.nongnu.org/cvs/)、[Perforce](https://www.perforce.com/)和[ClearCase](https://www.ibm.com/us-en/marketplace/rational-clearcase)之类的[SCM](https://baike.baidu.com/item/scm/2039966?fr=aladdin)工具，并且具有本地分支，方便的暂存区和多工作流等功能。
 
+## 1.关于
+
+### 分支与合并
+
+真正使git能够从其它SCM工具中脱颖而出的功能是分支
+
+git允许鼓励有多个彼此完全独立的本地分支，可以执行的操作：
+
+* 自由的上下文切换：分支和合并
+* 基于角色的代码行：不同分支的不同影响
+* 基于特征的工作流：功能受分支影响
+* 用后即弃的实验：分支删除不影响主分支
+
+![Branches](git.assets/branches@2x.png)
+
+---
+
+### 小而快速
+
+git几乎所有操作都在本地执行，与集中式版本控制需要网络速度相比更快。
+
+git在linux内核上构建，可以有效处理大型存储库，git用c语言编写，速度和性能是git的主要设计目标
+
+git最慢的操作是初始克隆操作，需要下载整个历史记录，而不是最新版本。
+
+git在整个项目的整个历史记录具有每个文件的版本，但是客户端的数据大小由于压缩和存储数据的效率几乎不变。
+
+---
+
+### 分布式
+
+可以实现无限数量的工作流，多重备份
+
+集中式：
+
+![工作流程A](git.assets/workflow-a@2x.png)
+
+
+
+
+
+---
+
+### 暂存区
+
+与其他系统不同，Git具有称为“暂存区”或“索引”的名称。这是一个中间区域，可以在完成提交之前对提交进行格式化和检查。
+
+使Git与其他工具区分开的一件事是，可以快速暂存某些文件并提交它们，而无需在工作目录中提交所有其他修改的文件，也不必在提交期间在命令行中列出它们。
+
+![索引1](git.assets/index1@2x.png)
+
+这使您只能暂存已修改文件的一部分。在意识到忘记提交其中一个文件之前，对文件进行两个在逻辑上不相关的修改的日子已经一去不复返了。现在，您可以暂存当前提交所需的更改，并暂存下一次提交的其他更改。此功能可根据需要扩展到文件的许多不同更改。
+
+当然，如果您不想要这种控制，Git还可以轻松忽略此功能-只需在commit命令中添加“ -a”，以将对所有文件的所有更改添加到登台区域。
+
+![索引2](git.assets/index2@2x.png)
+
+---
+
 # 二、安装Git
 
 git官网https://git-scm.com/ 可以获取在线教程、官方pdf教程文档以及git相关工具等。
@@ -174,6 +233,12 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 [GUI客户端](https://git-scm.com/downloads/guis)
 
+使用GUI客户端不需要命令行的键入，更友好、更智能。
+
+选择目前比较流行的[github桌面](https://desktop.github.com/)windows64位
+
+
+
 
 
 # 升级
@@ -277,3 +342,7 @@ git remote rm 简名  移除远程仓库的指向 ，本质远程仓库还在，
 # 分支
 
 git branch 分支名  创建分支
+
+# git参考
+
+ 
