@@ -270,7 +270,9 @@ git help config获取config命令的手册，以浏览器打开或者git config 
 
 想要对现有项目进行管理，在该项目目录使用git bash here并键入
 
-**git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件，提示初始化空git仓库在G://github/git/.git文件夹中，无论git文件夹中有无文件都会提示相同信息，但是如果已经存在了.git文件夹，会提示重新初始化存在的git仓库在G://github/git/.git文件夹中，如果对文件添加了跟踪或者提交，git init不会影响这个状态，即如果有.git文件夹git init操作将不会做任何动作。
+**git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件，无论git文件夹中有无文件都会提示相同信息，但是如果已经存在了.git文件夹，会提示重新初始化存在的git仓库在G://github/git/.git文件夹中，如果对文件添加了跟踪或者提交，git init不会影响这个状态，即如果有.git文件夹git init操作将不会做任何动作。
+
+* 初始化空git仓库在G://github/git/.git文件夹中
 
 ![image-20200104203115809](git.assets/image-20200104203115809.png)
 
@@ -288,12 +290,81 @@ git help config获取config命令的手册，以浏览器打开或者git config 
 
 完成后会在clone的目录下出现仓库名称的文件夹
 
+# 文件跟踪及忽略
+查看文件状态使用git status
 
+刚初始化仓库git init 后除了.git文件夹和里面的内容之外没有其他文件，
+
+键入git status 可以看仓库的状态
+
+* 一个master分支
+* 尚未提交
+* 没有东西可以提交（新建或复制文件，使用git add跟踪）
+
+![image-20200104221440523](git.assets/image-20200104221440523.png)
 
 **echo "# 标题" >  abc.md** 建立**文件名.类型**，并输入内容。
 
-# 文件跟踪及忽略
-**git add <file.type> **加入到暂存区
+这时候仓库就有了一个新的文件叫abc.md里面的内容是“# 标题”，和.git属于同一个文件夹
+
+键入git status查看此时该仓库的状态
+
+* 一个master分支
+* 尚未提交
+* 没有跟踪的文件：使用git add包含将要提交的文件abd.md，红色字体显示，
+* 没有任何已跟踪文件可以提交但是没有跟踪的文件存在（使用git add 跟踪）
+
+![image-20200104222502105](git.assets/image-20200104222502105.png)
+
+该文件没有被添加到跟踪的状态，跟踪状态的文件指加入到版本控制的文件，跟踪的文件不存在上次快照记录中，初次克隆仓库时候，工作目录的所有文件都属于已跟踪状态。
+
+若键入git add abc没有添加类型将会报错
+
+* 找不到文件，abc没有匹配任何文件
+
+![image-20200104223633130](git.assets/image-20200104223633130.png)
+
+git add <file.type> 加入到暂存区，将文件名和类型显示填写
+
+虽然出现了警告，LF换行会被代替CRLF回车+换行，但是输入git status 查看仓库状态发现文件已经添加到跟踪状态即暂存区中，等待提交。
+
+* 一个master分支
+* 尚未提交
+* 有变化待提交：即在暂存区中尚未提交（使用git rm --cache <文件名>从暂存区中移除）
+
+![image-20200104224749882](git.assets/image-20200104224749882.png)
+
+我们试一试git rm --cache abc 不输入文件类型
+
+提示：fatal: pathspec 'abc' did not match any files
+
+说明依然需要输入完整的文件名.类型
+
+git rm --cache abc.md
+
+提示：rm 'abc.md'
+
+git status
+
+* 即成功把暂存区文件abc.md移除，并现在是非跟踪状态。
+
+![image-20200104225549730](git.assets/image-20200104225549730.png)
+
+再把该文件跟踪，可以使用git add *或者git add .跟踪当前目录下所有文件
+
+键入git commit将会使用默认编辑器打开一个文件.git/COMMIT_EDITMSG
+
+* 请对你的更改输入提交信息，每一行以#开头会被忽视，一个空的信息阻止了提交
+* 一个master分支
+* 初始提交
+* 有变化待提交
+* 新文件：abc.md
+
+![image-20200104230752043](git.assets/image-20200104230752043.png)
+
+对文件修改后保存文件并退出编辑器，若直接点x推出visual code会临时保存一个副本，即使将原文件删除也存在该副本，如果将.git文件和abc.md删除重新初始化仓库并新建文件，git commit将会出现之前的文件COMMIT_EDITMSG内容，这是visual code的副本内容。
+
+
 
 创建.gitignore文件。
 
