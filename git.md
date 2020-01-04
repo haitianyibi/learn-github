@@ -1,9 +1,12 @@
-# 安装Git  
-linux使用yum  
-$sudo yum install git  
-使用apt-get安装  
-$sudo apt-get install git  
-#anchor
+[TOC]
+
+# git
+
+git是一个免费的开源的分布式版本控制系统，可以快速高效的处理小型到大型项目的所有内容。
+
+# 安装Git
+
+
 
 # 升级
 ```git clone git://git.kernel.org/pub/scm/git/git.git```
@@ -14,8 +17,8 @@ git config --global user.email 123@132.com
 git config --global core.editor vim
 
 # 查看配置
-git config user.name  
-git config --list
+```git config user.name  ```
+`git config --list`
 
 # 获取帮助
 git help <verb>  
