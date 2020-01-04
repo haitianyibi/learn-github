@@ -236,6 +236,7 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 选择目前比较流行的[github桌面](https://desktop.github.com/)windows64位，注册github
 
 # 四、git基础
+
 ### 更新git
 
 git升级本质也是git clone将最新版本的git下载到本地
@@ -362,7 +363,13 @@ git status
 
 ![image-20200104230752043](git.assets/image-20200104230752043.png)
 
-对文件修改后保存文件并退出编辑器，若直接点x推出visual code会临时保存一个副本，即使将原文件删除也存在该副本，如果将.git文件和abc.md删除重新初始化仓库并新建文件，git commit将会出现之前的文件COMMIT_EDITMSG内容，这是visual code的副本内容。
+对文件修改后保存文件并退出编辑器，若直接点x推出visual code会临时保存一个副本，即使将原文件删除也存在该副本，如果将.git文件和abc.md删除重新初始化仓库并新建文件，git commit将会出现之前的文件COMMIT_EDITMSG内容，这是visual code的副本内容。未保存状态文件名有黑点。
+
+git status也会出现这样信息：nothing to commit ,working directory clean没有提交的，工作目录干净
+
+文件的状态变化周期：
+
+![image-20200104234348906](git.assets/image-20200104234348906.png)
 
 
 
