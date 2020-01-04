@@ -235,26 +235,42 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 选择目前比较流行的[github桌面](https://desktop.github.com/)windows64位，注册github
 
-# 升级
+# 四、git基础
+### 更新git
+
+git升级本质也是git clone将最新版本的git下载到本地
+
+选择一个空文件夹，右键`git bash here`，在终端键入
+
 ```git clone git://git.kernel.org/pub/scm/git/git.git```
 
-# 配置
+将会出现git文件夹，子文件夹包含.git文件夹，该方法速度较慢建议在官网直接下载最新版安装替换
+
+![image-20200104200413213](git.assets/image-20200104200413213.png)
+
+### 配置git
+
 git config --global user.name "用户名字"  
 git config --global user.email 123@132.com  
 git config --global core.editor vim
 
-# 查看配置
-```git config user.name  ```
-`git config --list`
+使用--globa选项只需运行一次，需要对项目做特殊配置则在项目目录下使用无--global选项的命令配置
 
-# 获取帮助
+### 检查配置信息
+
+git config --list或使用git config <key>对某一项配置检查，如：git  config user.name
+
+### 获取帮助
+
 git help <verb>  
 git <verb> --help  
-man git-<verb>  
-git help config
+git help config获取config命令的手册，以浏览器打开或者git config --help
 
-# 初始化git仓库
-**git init**  创建了.git文件子目录
+### 初始化git仓库
+
+想要对项目进行管理，在该项目目录使用git bash here并键入
+
+**git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件
 
 **echo "# 标题" >  abc.md** 建立**文件名.类型**，并输入内容。
 
