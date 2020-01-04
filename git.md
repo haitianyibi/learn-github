@@ -225,8 +225,6 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 ![image-20200104171711812](git.assets/image-20200104171711812.png)
 
----
-
 
 
 # 三、安装GUI
@@ -235,9 +233,7 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 使用GUI客户端不需要命令行的键入，更友好、更智能。
 
-选择目前比较流行的[github桌面](https://desktop.github.com/)windows64位
-
-
+选择目前比较流行的[github桌面](https://desktop.github.com/)windows64位，注册github
 
 
 
