@@ -18,11 +18,11 @@ git官网https://git-scm.com/ 可以获取在线教程、官方pdf教程文档�
 
 git源存储库https://github.com/git/git
 
-git可安装在mac os x、windows、linux/unix系统上。
+git可安装在mac os x、windows、linux/unix系统上。git for windows（msysgit）与git是不同的项目
 
 ---
 
-[下载git](https://git-scm.com/download/)版本2.24.1.2 64位版本。
+[下载git](https://git-scm.com/download/)版本2.24.1.2 64位版本，双击安装。
 
 ![image-20200104135038239](git.assets/image-20200104135038239.png)
 
@@ -52,10 +52,121 @@ Git是GNU通用公共许可证版本2（[GPLv2](https://www.gnu.org/licenses/old
 
 * [vim](https://www.vim.org/)是git的默认编辑器，现在已经不推荐使用了。
 * [Notepad++](https://notepad-plus-plus.org/)
+* [visual studio code](https://code.visualstudio.com/)
+* [visual studio code insider](https://code.visualstudio.com/insiders/)相当于bate版本
+* [sublime text](https://www.sublimetext.com/)
+* [Atom](https://github.com/atom/atom)
 
 ![image-20200104143151362](git.assets/image-20200104143151362.png)
 
+这里选择visual studio code作为默认编辑器。
+
 ![image-20200104144133527](git.assets/image-20200104144133527.png)
+
+---
+
+设置PATH环境
+
+* 仅在git bash命令行使用：不会影响现有path
+* git 命令行和第三方软件（推荐）：git bash、命令提示符、windows powershell可以找到git的path
+* 在命令提示符和可选的unix工具中使用git：会覆盖windows的工具路径，unix和windows有重名工具
+
+![image-20200104150355344](git.assets/image-20200104150355344.png)
+
+---
+
+选择[HTTPS](https://baike.baidu.com/item/https/285356?fr=aladdin)传输后端
+
+* 使用[OpenSSL](https://www.openssl.org/)库
+* 使用本地[windows安全通道](https://docs.microsoft.com/zh-cn/windows-hardware/drivers/display/communicating-through-a-secure-channel)库
+
+![image-20200104151642023](git.assets/image-20200104151642023.png)
+
+这里选择openssl
+
+---
+
+配置结束转换的行
+
+* **检查**换行格式为windows格式，**提交**为unix换行格式
+
+git检查文本时会将**LF**替换为**CRLF**，提交文件时会将CRLF替换为LF，交叉平台项目建议设置在windows
+
+* 检查不做替换，提交时转化为unix换行格式
+
+git在检查时不做转换，提交文件时CRLF替换为LF，交叉平台项目建议设置在unix,core.autocrlf设为input
+
+* 不对换行格式转换
+
+git不会再检查和提交时对**换行符**替换，不建议在交叉平台项目上选择，core.autocrlf设为false
+
+![image-20200104153033470](git.assets/image-20200104153033470.png)
+
+这里选择windows格式的换行
+
+不同平台下结束符差别，配置不对会出错，[参考](https://my.oschina.net/moooofly/blog/228467)
+
+ Windows 使用回车CR\r和换行LF\n两个字符来结束一行，而 Mac 和 Linux 只使用换行LF一个字符
+
+---
+
+配置git bash的终端模拟器
+
+* mintty（[MSYS2](http://www.msys2.org/))的默认终端）
+
+git bash 使用[mintty](http://mintty.github.io/)作为终端模拟器，mintty支持可变窗口大小，非矩形选择和unicode格式，windows控制台程序，如交互的python程序必须在mintty通过winpty启动，winpty使mintty终端具有交互性
+
+* windoes自带的控制台
+
+即cmd.exe,可以很好适应windows32位系统控制台程序，如[python](https://www.python.org/)、[node.js](https://nodejs.org/en/)。但是默认限制stroll-back回滚,需要配置使用[unicode](http://unicode.org/main.html)格式才能正确显示非[ASCII](https://www.iana.org/assignments/character-sets/character-sets.xhtml)编码格式,在windows10之前不允许自由调整字体大小，只允许矩形文本选择。
+
+![image-20200104155102263](git.assets/image-20200104155102263.png)
+
+这里选择mintty
+
+---
+
+配置额外的选项
+
+* 允许文件系统缓存
+
+文件系统数据会被批量读，特定操作会在内存上缓存数据(core.fscache设置为true)，可以有效提升速度。
+
+* 允许[git凭证管理器](https://github.com/Microsoft/Git-Credential-Manager-for-Windows)
+
+windows版本的git凭证管理器提供安全windows的git凭证保存，最著名的多重身份验证被github和visual studio 支持，需要,NET framework v4.5.1以上。
+
+* 允许[符号链接](https://github.com/git-for-windows/git/wiki/Symbolic-Links)
+
+允许符号链接（需要secreatesymmboliclink许可）通过设置声明已存在的仓库不会被影响
+
+![image-20200104164013210](git.assets/image-20200104164013210.png)
+
+默认选择前两个选项
+
+---
+
+配置实验选项（前沿特性）
+
+* 使用实验性功能，内置 add -i/-p命令
+
+使用实验性功能内置交互命令add(git add -i或git add -p),这会使启动更快，但是目前还不健壮。
+
+![image-20200104170751932](git.assets/image-20200104170751932.png)
+
+---
+
+点击安装
+
+从cmd或者右键git bash here出现的mingw64，输入`git`回车会弹出git的一些命令消息
+
+![image-20200104171631604](git.assets/image-20200104171631604.png)
+
+在mingw64输入mintty会弹出选项选择一个终端
+
+![image-20200104171711812](git.assets/image-20200104171711812.png)
+
+---
 
 
 
