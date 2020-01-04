@@ -235,8 +235,6 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 选择目前比较流行的[github桌面](https://desktop.github.com/)windows64位，注册github
 
-
-
 # 升级
 ```git clone git://git.kernel.org/pub/scm/git/git.git```
 
