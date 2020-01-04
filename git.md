@@ -268,9 +268,27 @@ git help config获取config命令的手册，以浏览器打开或者git config 
 
 ### 初始化git仓库
 
-想要对项目进行管理，在该项目目录使用git bash here并键入
+想要对现有项目进行管理，在该项目目录使用git bash here并键入
 
-**git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件
+**git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件，提示初始化空git仓库在G://github/git/.git文件夹中，无论git文件夹中有无文件都会提示相同信息，但是如果已经存在了.git文件夹，会提示重新初始化存在的git仓库在G://github/git/.git文件夹中，如果对文件添加了跟踪或者提交，git init不会影响这个状态，即如果有.git文件夹git init操作将不会做任何动作。
+
+![image-20200104203115809](git.assets/image-20200104203115809.png)
+
+![image-20200104204810988](git.assets/image-20200104204810988.png)
+
+想要克隆别人的项目需要使用git clone命令，git支持多种数据传输协议，包括https://协议和git://协议，SSH传输协议，GitHub在仓库主页选择clone or download即下载或clone本质是一样的
+
+![image-20200104214400751](git.assets/image-20200104214400751.png)
+
+![image-20200104214842972](git.assets/image-20200104214842972.png)
+
+可以选择open in deesktop会自动clone下载，或选择下载zip压缩文件，或选择复制https协议的URL或SSH协议
+
+![image-20200104215107731](git.assets/image-20200104215107731.png)
+
+完成后会在clone的目录下出现仓库名称的文件夹
+
+
 
 **echo "# 标题" >  abc.md** 建立**文件名.类型**，并输入内容。
 
