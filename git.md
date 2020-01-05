@@ -275,6 +275,8 @@ git help config获取config命令的手册，以浏览器打开或者git config 
 
 **git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件，无论git文件夹中有无文件都会提示相同信息，但是如果已经存在了.git文件夹，会提示重新初始化存在的git仓库在G://github/git/.git文件夹中，如果对文件添加了跟踪或者提交，git init不会影响这个状态，即如果有.git文件夹git init操作将不会做任何动作。
 
+也可以**git init 文件夹名称**会在当前目录下新建文件夹，新文件夹的子目录有.git目录。
+
 .git目录记录所有git存储和操作，若想备份复制一个版本库只需要把这个目录拷贝
 
 * 初始化空git仓库在G://github/git/.git文件夹中
