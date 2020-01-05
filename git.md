@@ -614,3 +614,8 @@ git add README
 git add CONTRIBUTION.md
 
 cat .gitgnore
+
+git diff
+
+git diff --cached
+
