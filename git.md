@@ -388,20 +388,26 @@ git status也会出现这样信息：nothing to commit ,working directory clean�
 
  ### 查看尚未暂存的文件更新那些部分
 
-git diff
+git diff比较的是工作目录中当前文件和暂存区快照之间的差异，或者git diff --cached   |   git diff --staged
 
+![image-20200105093844819](git.assets/image-20200105093844819.png)
 
+### 提交
 
- # 提交
 git commit -m'描述目的'
+
+![image-20200105094122814](git.assets/image-20200105094122814.png)
 
 若已跟踪内容修改后未跟踪而提交，则提交的是之前的副本。
 
 git checkout -- 文件名.类型   撤销提交，返回上一次提交状态。
 
+git commit -a将未跟踪文件同时跟踪add和提交commit
 
 
-# 克隆已有仓库
+
+###  克隆已有仓库
+
 http://协议
 
 git clone <url>
@@ -412,9 +418,8 @@ git://协议
 
 ssh协议
 
+### 检查当前文件状态
 
-
-# 检查当前文件状态
 git status  
 git status -s 新添加未跟踪文件？？，暂存区文件A，修改过文件M在左边未跟踪，右边已跟踪，
 
@@ -422,15 +427,23 @@ git status --short
 
 git diff 比较当前文件和在暂存区文件的差异，即修改后未跟踪最新文件。
 
-# 移除文件
+### 移除文件
 
-git rm 文件名.文件类型
+git rm --cache 文件名.文件类型，停止跟踪文件，文件依旧存在
 
-# 查看提交历史
+git rm -f 文件名.类型， 此时文件将会被移出暂存区，文件从文件夹中删除。
+
+### 查看提交历史
 
 git log 
 
-# 远程仓库
+### 对文件改名字
+
+git mv 旧名.类型  新名.类型
+
+![image-20200105094811491](git.assets/image-20200105094811491.png)
+
+### 远程仓库
 
 git remote  -v 显示origin表示克隆仓库的默认名字，已经克隆到本地。-v显示URL。
 
@@ -448,12 +461,12 @@ git remote rename origin abc   远程仓库重命名将origin修改为abc
 
 git remote rm 简名  移除远程仓库的指向 ，本质远程仓库还在，如不在未某个仓库贡献了。
 
-# 标签
+### 标签
 
-# 分支
+### 分支
 
 git branch 分支名  创建分支
 
-# git参考
+### git参考
 
  
