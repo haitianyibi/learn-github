@@ -619,3 +619,64 @@ git diff
 
 git diff --cached
 
+git commit
+
+git status -a -m 'added new benchmarks'
+
+rm PROJECTS.md
+
+git rm PROJECTS.md
+
+git rm --cached README
+
+git rm log/\\*.log
+
+git rm \\*~
+
+git mv file_from file_to
+
+git mv README.md README
+
+mv README.md README
+
+git rm README.md
+
+git add README
+
+git clone https://github.com/schacon/simplegit-progit
+
+git log
+
+git log -p -2
+
+git log --stat
+
+git log --pretty=oneline
+
+git log --pretty=format:"%h - %an, %ar : %s"
+
+git log --pretty=format:"%h %s" --graph
+
+git log --since=2.weeks
+
+git log -Sfunction_name
+
+git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="2008-11-01" --no-merges -- t/
+
+git commit --amend
+
+git commit -m 'initial commit'
+
+git add forgotten_file
+
+git commit --amend
+
+git checkout -- [flie]
+
+git remote
+
+git remote -v
+
+git remote add <shortname> <url>
+
+git fetch <shortname>
