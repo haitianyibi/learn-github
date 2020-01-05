@@ -261,6 +261,8 @@ git config --global core.editor vim
 
 git config --list或使用git config <key>对某一项配置检查，如：git  config user.name
 
+config文件包含特定配置选项， 
+
 ### 获取帮助
 
 git help <verb>  
@@ -273,7 +275,17 @@ git help config获取config命令的手册，以浏览器打开或者git config 
 
 **git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件，无论git文件夹中有无文件都会提示相同信息，但是如果已经存在了.git文件夹，会提示重新初始化存在的git仓库在G://github/git/.git文件夹中，如果对文件添加了跟踪或者提交，git init不会影响这个状态，即如果有.git文件夹git init操作将不会做任何动作。
 
+.git目录记录所有git存储和操作，若想备份复制一个版本库只需要把这个目录拷贝
+
 * 初始化空git仓库在G://github/git/.git文件夹中
+* description文件仅供gitweb程序使用
+* config文件包含项目配置
+* info目录包含一个全局性排除（global exclude ）文件，用以放置不放在.gitignore文件中的忽略模式
+* hooks文件夹包含客户端或服务器的钩子脚本（hook scripts）
+* HEAD文件指示被检出的分支
+* 待创建的index文件保存暂存区信息
+* objects目录存储所有数据内容
+* refs目录存储指向数据（分支）的提交对象的指针
 
 ![image-20200104203115809](git.assets/image-20200104203115809.png)
 
@@ -462,6 +474,12 @@ git remote rename origin abc   远程仓库重命名将origin修改为abc
 git remote rm 简名  移除远程仓库的指向 ，本质远程仓库还在，如不在未某个仓库贡献了。
 
 ### 标签
+
+### git对象
+
+git 是一个内容寻址文件系统，git的核心部分是简单的键值对数据库，向数据库输入任意类型的内容会返回一个值，通过该值可以再次检索该内容
+
+### git钩子
 
 ### 分支
 
