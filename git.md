@@ -47,11 +47,38 @@ git在整个项目的整个历史记录具有每个文件的版本，但是客�
 
 可以实现无限数量的工作流，多重备份
 
-集中式：
+分布式版本控制
+
+* 服务器和本地是相同的副本
+* 用户之间可以相互协作，即没有中央服务器，都是独立的版本数据库。
+
+![image-20200105165201420](git.assets/image-20200105165201420.png)
+
+---
+
+集中化的版本控制
+
+* 版本控制数据库只能在中央服务器上并且只有一个
+* 可以由多个用户检出不同的版本到本地进行修改。
+* 检出的数据可以是快照或者数据
+
+![image-20200105164712577](git.assets/image-20200105164712577.png)
 
 ![工作流程A](git.assets/workflow-a@2x.png)
 
+---
 
+本地版本控制
+
+在版本库中项目文件版本通过整体复制来保存不同的版本，检出的文件修改后做为新的版本放入版本数据库，旧版本之间可以检出即重新复制，但是原始版本不可修改，即版本控制数据库内的数据只能写入不能修改，且有大量的重复资源，占用空间大。
+
+版本库会采用快照方式，以文件变更的方式进行存储，而不是完整的存储相同的内容，这样更进一步。
+
+本地版本历史与服务器版本历史可以完全复制，或者只是其中一部分。
+
+![image-20200105170833192](git.assets/image-20200105170833192.png)
+
+![image-20200105163853986](git.assets/image-20200105163853986.png)
 
 
 
@@ -237,7 +264,9 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 选择目前比较流行的[github桌面](https://desktop.github.com/)windows64位，注册github
 
-# 四、git基础
+# 四、git基本操作
+
+### git三种状态
 
 ### 更新git
 
@@ -479,9 +508,13 @@ git remote rm 简名  移除远程仓库的指向 ，本质远程仓库还在，
 
 ### 标签
 
+# 五、git基本原理
+
 ### git对象
 
 git 是一个内容寻址文件系统，git的核心部分是简单的键值对数据库，向数据库输入任意类型的内容会返回一个值，通过该值可以再次检索该内容。所有内容均以树对象和数据对象的形式存储，树对象存储文件名，数据对象存储数据内容。树对象对应于unix目录项，数据对象对应文件内容。一个树对象包含一条或多条树对象记录tree enrty，每条记录含义一个指向数据对象或者子树对象SHA-1指针，以及相应的模式、类型、文件名信息。
+
+git都是以数据内容的哈希值做索引而不是文件名。
 
 #### 数据对象
 
@@ -526,5 +559,58 @@ git branch 分支名  创建分支
 
 # 名词
 
+版本控制	版本控制系统VCSs	版本控制工具	本地版本控制	集中化的版本控制系统CVCS(Centralized Version Control System)	分布式版本控制	分布式工作流	远程仓库	远程分支	钩子脚本	git对象	打包	服务器协议	GUI	IDE	git脚本	RCS	文件变更列表	快照	快照流	提交	哈希SHA-1散列	已提交commited	已修改modified	已暂存staged	git仓库	工作目录	暂存区	命令行		GUI	窗口命令Command Prompt	PowerShell	终端terminal	控制台console	忽略文件
+
+仓库
+
+克隆、拷贝
+
+项目历史
+
+分支
+
 # 命令
 
+git clone git://git.kernel.org/pub/scm/git/git.git
+
+git config --global user.name "John Doe"
+
+git config --global user.email johndoe@example.com
+
+git config --global core.editor emacs
+
+git config --list
+
+git config user.name
+
+git help <verb>
+
+git <verb> --help
+
+git help config
+
+git init
+
+git add *.c
+
+git add LICENSE
+
+git commit -m 'initial project version'
+
+git clone https://github.com/libgit2/libgit2
+
+git clone https://github.com/libgit2/libgit2 myLibgib
+
+git status
+
+git status -s
+
+git status --short
+
+echo 'My Project' > README
+
+git add README
+
+git add CONTRIBUTION.md
+
+cat .gitgnore
