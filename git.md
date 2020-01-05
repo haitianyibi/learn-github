@@ -559,7 +559,7 @@ git branch 分支名  创建分支
 
 # 名词
 
-版本控制	版本控制系统VCSs	版本控制工具	本地版本控制	集中化的版本控制系统CVCS(Centralized Version Control System)	分布式版本控制	分布式工作流	远程仓库	远程分支	钩子脚本	git对象	打包	服务器协议	GUI	IDE	git脚本	RCS	文件变更列表	快照	快照流	提交	哈希SHA-1散列	已提交commited	已修改modified	已暂存staged	git仓库	工作目录	暂存区	命令行		GUI	窗口命令Command Prompt	PowerShell	终端terminal	控制台console	忽略文件
+版本控制	版本控制系统VCSs	版本控制工具	本地版本控制	集中化的版本控制系统CVCS(Centralized Version Control System)	分布式版本控制	分布式工作流	远程仓库	远程分支	钩子脚本	git对象	打包	服务器协议	GUI	IDE	git脚本	RCS	文件变更列表	快照	快照流	提交	哈希SHA-1散列	已提交commited	已修改modified	已暂存staged	git仓库	工作目录	暂存区	命令行		GUI	窗口命令Command Prompt	PowerShell	终端terminal	控制台console	忽略文件	glob模式	shell	
 
 仓库
 
