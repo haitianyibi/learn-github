@@ -559,15 +559,7 @@ git branch 分支名  创建分支
 
 # 名词
 
-版本控制	版本控制系统VCSs	版本控制工具	本地版本控制	集中化的版本控制系统CVCS(Centralized Version Control System)	分布式版本控制	分布式工作流	远程仓库	远程分支	钩子脚本	git对象	打包	服务器协议	GUI	IDE	git脚本	RCS	文件变更列表	快照	快照流	提交	哈希SHA-1散列	已提交commited	已修改modified	已暂存staged	git仓库	工作目录	暂存区	命令行		GUI	窗口命令Command Prompt	PowerShell	终端terminal	控制台console	忽略文件	glob模式	shell	
-
-仓库
-
-克隆、拷贝
-
-项目历史
-
-分支
+版本控制	版本控制系统VCSs	版本控制工具	本地版本控制	集中化的版本控制系统CVCS(Centralized Version Control System)	分布式版本控制	分布式工作流	远程仓库	远程分支	钩子脚本	git对象	打包	服务器协议	GUI	IDE	git脚本	RCS	文件变更列表	快照	快照流	提交	哈希SHA-1散列	已提交commited	已修改modified	已暂存staged	git仓库	工作目录	暂存区	命令行		GUI	窗口命令Command Prompt	PowerShell	终端terminal	控制台console	忽略文件	glob模式	shell	标签	分支模型	仓库	克隆、拷贝	项目历史	分支模型	提交对象	父对象	 fast-forward	merge	三方合并	合并提交	合并冲突	
 
 # 命令
 
@@ -680,3 +672,94 @@ git remote -v
 git remote add <shortname> <url>
 
 git fetch <shortname>
+
+git push origin master
+
+git remote show origin
+
+git remote origin newshortname
+
+git remote rm shortname
+
+git tag
+
+git tag -l ' v1.8.5*'
+
+git tag -a v1.4 -m "my version 1.4"
+
+git show v1.4
+
+git tag v1.4-lw
+
+git tag -a v1.2 9fceb02
+
+git push origin v1.5
+
+git push origin --tags
+
+git tag -d <tagname>
+
+git push origin :refs/tags/v1.4-lw
+
+git checkout -b <new-branch> <tagname>
+
+git config --global alias.ci commit
+
+git ci=git commit
+
+git config --global alias.unstage 'reset HEAD --'
+
+git unstage fileA 
+
+git reset HEAD --fileA
+
+git add README test.rb LICENSE
+
+git commit -m 'The initial commit of my project'
+
+git branch testing
+
+git log --oneline --decorate
+
+git checkout testing
+
+git checkout master
+
+git log --oneline --decorete --graph
+
+git checkout -b iss53
+
+git branch iss53
+
+git checkout iss53
+
+git checkout master
+
+git checkout -b hotfix
+
+git commit -a -m 'fixed the broken email address'
+
+git checkout master
+
+git merge hotfix
+
+git branch -d hotfix
+
+git checkout iss53
+
+git commit -a -m 'finished the new footer iss53'
+
+git checkout  master
+
+git merge iss53
+
+git branch -d iss53
+
+git branch
+
+git branch -v
+
+git branch --merged
+
+git branch --no-merge
+
