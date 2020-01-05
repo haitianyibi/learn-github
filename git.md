@@ -293,7 +293,7 @@ git help config获取config命令的手册，以浏览器打开或者git config 
 
 ![image-20200104204810988](git.assets/image-20200104204810988.png)
 
-想要克隆别人的项目需要使用git clone命令，git支持多种数据传输协议，包括https://协议和git://协议，SSH传输协议，GitHub在仓库主页选择clone or download即下载或clone本质是一样的
+想要克隆别人的项目需要使用git clone命令，git支持多种数据传输协议，包括https://协议和git://协议，SSH传输协议，GitHub在仓库主页选择clone or download即下载或clone本质是一样的  
 
 ![image-20200104214400751](git.assets/image-20200104214400751.png)
 
