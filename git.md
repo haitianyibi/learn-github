@@ -291,7 +291,8 @@ git help config获取config命令的手册，以浏览器打开或者git config 
 
 完成后会在clone的目录下出现仓库名称的文件夹
 
-# 文件跟踪及忽略
+### 文件跟踪及忽略
+
 查看文件状态使用git status
 
 刚初始化仓库git init 后除了.git文件夹和里面的内容之外没有其他文件，
@@ -385,7 +386,11 @@ git status也会出现这样信息：nothing to commit ,working directory clean�
 
 忽略规则扩展<https://github.com/github/gitignore>
 
- 
+ ### 查看尚未暂存的文件更新那些部分
+
+git diff
+
+
 
  # 提交
 git commit -m'描述目的'
