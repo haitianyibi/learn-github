@@ -803,3 +803,36 @@ git branch -d client
 
 git branch -d server
 
+ls
+
+ls -f1
+
+git init test
+
+cd test
+
+find .git/objects
+
+echo 'teest content' | git hash-object -w --stdin
+
+find .git/objects -type f
+
+git cat-file -p <SHA-1>
+
+echo 'version 1' > test.txt
+
+git hash-object -w test.txt
+
+echo 'version 2' > test.txt
+
+git hash-object -w test.txt
+
+git cat-file -p <SHA-1> > test.txt
+
+cat test.txt
+
+git cat-file -p <SHA-1> > test.txt
+
+cat test.txt
+
+git cat-file -t <SHA-1>
