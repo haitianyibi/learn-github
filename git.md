@@ -836,3 +836,12 @@ git cat-file -p <SHA-1> > test.txt
 cat test.txt
 
 git cat-file -t <SHA-1>
+
+git write-tree
+
+echo 'new file' > new.file
+
+git update-index --cacheinfo 100644 \
+
+git update-index --add new.txt
+
