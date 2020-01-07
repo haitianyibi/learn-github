@@ -284,7 +284,7 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 # 四、git基本操作
 
-## 1.git init
+## 1.git init（本地仓库）
 
 ### 初始化git仓库
 
@@ -310,41 +310,7 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 ![image-20200104204810988](git.assets/image-20200104204810988.png)
 
-###  克隆已有仓库
 
-http://协议
-
-git clone <url>
-
-git clone <url>  别名
-
-git://协议
-
-ssh协议
-
-想要克隆别人的项目需要使用git clone命令，git支持多种数据传输协议，包括https://协议和git://协议，SSH传输协议，GitHub在仓库主页选择clone or download即下载或clone本质是一样的  
-
-![image-20200104214400751](git.assets/image-20200104214400751.png)
-
-![image-20200104214842972](git.assets/image-20200104214842972.png)
-
-可以选择open in deesktop会自动clone下载，或选择下载zip压缩文件，或选择复制https协议的URL或SSH协议
-
-![image-20200104215107731](git.assets/image-20200104215107731.png)
-
-完成后会在clone的目录下出现仓库名称的文件夹
-
-### 更新git
-
-git升级本质也是git clone将最新版本的git下载到本地
-
-选择一个空文件夹，右键`git bash here`，在终端键入
-
-```git clone git://git.kernel.org/pub/scm/git/git.git```
-
-将会出现git文件夹，子文件夹包含.git文件夹，该方法速度较慢建议在官网直接下载最新版安装替换
-
-![image-20200104200413213](git.assets/image-20200104200413213.png)
 
 ### 配置git
 
@@ -549,6 +515,44 @@ git branch 分支名  创建分支
 ## 5.git merge
 
 ## 6.git checkout
+
+## 7.git remote(远程仓库)
+
+###  克隆已有仓库
+
+http://协议
+
+git clone <url>
+
+git clone <url>  别名
+
+git://协议
+
+ssh协议
+
+想要克隆别人的项目需要使用git clone命令，git支持多种数据传输协议，包括https://协议和git://协议，SSH传输协议，GitHub在仓库主页选择clone or download即下载或clone本质是一样的  
+
+![image-20200104214400751](git.assets/image-20200104214400751.png)
+
+![image-20200104214842972](git.assets/image-20200104214842972.png)
+
+可以选择open in deesktop会自动clone下载，或选择下载zip压缩文件，或选择复制https协议的URL或SSH协议
+
+![image-20200104215107731](git.assets/image-20200104215107731.png)
+
+完成后会在clone的目录下出现仓库名称的文件夹
+
+### 更新git
+
+git升级本质也是git clone将最新版本的git下载到本地
+
+选择一个空文件夹，右键`git bash here`，在终端键入
+
+```git clone git://git.kernel.org/pub/scm/git/git.git```
+
+将会出现git文件夹，子文件夹包含.git文件夹，该方法速度较慢建议在官网直接下载最新版安装替换
+
+![image-20200104200413213](git.assets/image-20200104200413213.png)
 
 # 五、git基本原理
 
