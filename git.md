@@ -543,17 +543,31 @@ git都是以数据内容的哈希值做索引而不是文件名。
 
 #### 提交对象
 
-树对象代表了跟踪的快照，提交对象保存了保存快照的人，时间，和原因
+树对象代表了跟踪的快照，提交对象保存了保存快照的人，时间，和原因,分支和tag指向commit对象,，commit对象指向树对象，树对象指向数据对象
 
 commit-tree创建一个提交对象
 
+add创建了SHA-1和加入暂存区
+
+hash-object 返回按内容计算的哈希
+
+hash-object -w往git仓库写入了数据对象
+
 三种git对象以单独文件保存在objects文件夹下。
+
+orig_head保存master分支所指commit对象，在创建分支时出现，
+
+head存储了refs/heads/当前所在分支名
 
 ### git钩子
 
 ### 分支
 
 git branch 分支名  创建分支
+
+在resfs/heads里存了分支名和master(此master存了当前在的分支同样所指向的commit对象)
+
+
 
 ### git参考
 
