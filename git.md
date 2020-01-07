@@ -6,13 +6,29 @@
 
 ![img](git.assets/Git-Logo-2Color.png)*注：官方logo下载在https://git-scm.com/downloads/logos*
 
-[git](https://git-scm.com/)是一个免费的开源的分布式版本控制系统，可以快速高效的处理小型到大型项目的所有内容。
+## 1.版本控制
 
-git是 [Linus Torvalds]([https://baike.baidu.com/item/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%9C%AC%E7%BA%B3%E7%AC%AC%E5%85%8B%E7%89%B9%C2%B7%E6%89%98%E7%93%A6%E5%85%B9/1034429?fr=aladdin](https://baike.baidu.com/item/林纳斯·本纳第克特·托瓦兹/1034429?fr=aladdin)) 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。关于git的诞生可以在[廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/896043488029600/896202815778784) 或[git简史]([https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-Git-%E7%AE%80%E5%8F%B2](https://git-scm.com/book/zh/v2/起步-Git-简史))看到。
+版本控制是记录一个或若干文件内容变化，文件可以是任何类型的文件。
+
+如果人们可以借助版本控制系统对文字，照片，视频或者是网页进行管理，坏处就是占用空间，好处就是对文件的完整和安全性有更好的作用。
+
+假如我写的论文觉得某一部分要修改，改完之后发现之前的更好，但是重新写回去就又浪费了时间和精力，我们就会完整复制一份当前的论文，多数情况下会放在相同的目录下，但是相同类型的文件不能重名，所以我又将复制的文件改名为\*\*论文2.0版本、\*\*3.0论文版本，后来发现完整的复制整个论文太费劲了，有很多重复的地方，那我们就复制要修改的部分，把被修改的部分保存下来，不行再替换回去。
+
+加入论文不是一个人写的，需要多个人一起写，那么大多数情况下有人负责绪论，有人负责第一章，有人负责照片收集，每个人把自己的部分写完后还需要汇总到一起，并重新排版修改，因为分开写的可能有些地方连贯不上，上下文也可能有重复的地方，后面出现在网络上协同工作的软件，大家都可以看到最新最全的版本，但是都是需要下载到本地然后在修改的，如果文件太大，每次提交都要重新上传完整的文件，网速限制因素就很大，而且服务器怎么识别变化的地方，删除和新添的，冲突的地方。
+
+## 2.git简史
+
+git诞生于2005年，
+
+git是 [Linus Torvalds]([https://baike.baidu.com/item/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%9C%AC%E7%BA%B3%E7%AC%AC%E5%85%8B%E7%89%B9%C2%B7%E6%89%98%E7%93%A6%E5%85%B9/1034429?fr=aladdin](https://baike.baidu.com/item/林纳斯·本纳第克特·托瓦兹/1034429?fr=aladdin)) 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。
+
+在之前使用的是BitKeeper公司提供的商业版本控制系统，该公司免费提供给linux管理内核代码，极大提高了原来手工整理代码的时代，后来有些开发者觉得bitkeeper难用，就反编译该软件进行修改，被bitkeeper公司发现后就收回了免费试用的权限，迫使linus torvalds安照原来使用bitkeeper的经验开发了git，刚开始很多人不熟悉该软件，难上手，git就朝着易用、速度简单设计、分布式、高效的版本管理系统发展。
+
+## 3.关于git优点
+
+[git](https://git-scm.com/)是一个免费的开源的**分布式版本控制系统**，可以快速高效的处理小型到大型项目的所有内容。
 
 git易于学习，功能强大。它远远高出[Subversion](http://subversion.apache.org/)、[CVS](http://www.nongnu.org/cvs/)、[Perforce](https://www.perforce.com/)和[ClearCase](https://www.ibm.com/us-en/marketplace/rational-clearcase)之类的[SCM](https://baike.baidu.com/item/scm/2039966?fr=aladdin)工具，并且具有本地分支，方便的暂存区和多工作流等功能。
-
-## 1.关于
 
 ### 分支与合并
 
@@ -33,13 +49,15 @@ git允许鼓励有多个彼此完全独立的本地分支，可以执行的操�
 
 ### 小而快速
 
-git几乎所有操作都在本地执行，与集中式版本控制需要网络速度相比更快。
+* git几乎所有操作都在本地执行，与集中式版本控制需要网络速度相比更快。
 
-git在linux内核上构建，可以有效处理大型存储库，git用c语言编写，速度和性能是git的主要设计目标
+* git在linux内核上构建，可以有效处理大型存储库，
 
-git最慢的操作是初始克隆操作，需要下载整个历史记录，而不是最新版本。
+* git用c语言编写，速度和性能是git的主要设计目标
 
-git在整个项目的整个历史记录具有每个文件的版本，但是客户端的数据大小由于压缩和存储数据的效率几乎不变。
+* git最慢的操作是初始克隆操作，需要联网下载整个历史记录，而不是最新版本。
+
+* git在整个项目的整个历史记录具有每个文件的版本，但是客户端的数据大小由于压缩和存储数据的效率几乎不变。
 
 ---
 
@@ -266,7 +284,55 @@ windows版本的git凭证管理器提供安全windows的git凭证保存，最著
 
 # 四、git基本操作
 
-### git三种状态
+## 1.git init
+
+### 初始化git仓库
+
+想要对现有项目进行管理，在该项目目录使用git bash here并键入
+
+**git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件，无论git文件夹中有无文件都会提示相同信息，但是如果已经存在了.git文件夹，会提示重新初始化存在的git仓库在G://github/git/.git文件夹中，如果对文件添加了跟踪或者提交，git init不会影响这个状态，即如果有.git文件夹git init操作将不会做任何动作。
+
+也可以**git init 文件夹名称**会在当前目录下新建文件夹，新文件夹的子目录有.git目录，命令行提示知道。
+
+.git目录记录所有git存储和操作，若想备份复制一个版本库只需要把这个目录拷贝
+
+* 初始化空git仓库在G://github/git/.git文件夹中
+* description文件仅供gitweb程序使用
+* config文件包含项目配置
+* info目录包含一个全局性排除（global exclude ）文件，用以放置不放在.gitignore文件中的忽略模式
+* hooks文件夹包含客户端或服务器的钩子脚本（hook scripts）
+* HEAD文件指示被检出的分支
+* 待创建的index文件保存暂存区信息
+* objects目录存储所有数据内容
+* refs目录存储指向数据（分支）的提交对象的指针
+
+![](git.assets/image-20200104203115809.png)
+
+![image-20200104204810988](git.assets/image-20200104204810988.png)
+
+###  克隆已有仓库
+
+http://协议
+
+git clone <url>
+
+git clone <url>  别名
+
+git://协议
+
+ssh协议
+
+想要克隆别人的项目需要使用git clone命令，git支持多种数据传输协议，包括https://协议和git://协议，SSH传输协议，GitHub在仓库主页选择clone or download即下载或clone本质是一样的  
+
+![image-20200104214400751](git.assets/image-20200104214400751.png)
+
+![image-20200104214842972](git.assets/image-20200104214842972.png)
+
+可以选择open in deesktop会自动clone下载，或选择下载zip压缩文件，或选择复制https协议的URL或SSH协议
+
+![image-20200104215107731](git.assets/image-20200104215107731.png)
+
+完成后会在clone的目录下出现仓库名称的文件夹
 
 ### 更新git
 
@@ -300,41 +366,9 @@ git help <verb>
 git <verb> --help  
 git help config获取config命令的手册，以浏览器打开或者git config --help
 
-### 初始化git仓库
 
-想要对现有项目进行管理，在该项目目录使用git bash here并键入
 
-**git init**  创建了.git文件子目录，该目录含有初始化git仓库的所有必须文件，无论git文件夹中有无文件都会提示相同信息，但是如果已经存在了.git文件夹，会提示重新初始化存在的git仓库在G://github/git/.git文件夹中，如果对文件添加了跟踪或者提交，git init不会影响这个状态，即如果有.git文件夹git init操作将不会做任何动作。
-
-也可以**git init 文件夹名称**会在当前目录下新建文件夹，新文件夹的子目录有.git目录，命令行提示知道。
-
-.git目录记录所有git存储和操作，若想备份复制一个版本库只需要把这个目录拷贝
-
-* 初始化空git仓库在G://github/git/.git文件夹中
-* description文件仅供gitweb程序使用
-* config文件包含项目配置
-* info目录包含一个全局性排除（global exclude ）文件，用以放置不放在.gitignore文件中的忽略模式
-* hooks文件夹包含客户端或服务器的钩子脚本（hook scripts）
-* HEAD文件指示被检出的分支
-* 待创建的index文件保存暂存区信息
-* objects目录存储所有数据内容
-* refs目录存储指向数据（分支）的提交对象的指针
-
-![](git.assets/image-20200104203115809.png)
-
-![image-20200104204810988](git.assets/image-20200104204810988.png)
-
-想要克隆别人的项目需要使用git clone命令，git支持多种数据传输协议，包括https://协议和git://协议，SSH传输协议，GitHub在仓库主页选择clone or download即下载或clone本质是一样的  
-
-![image-20200104214400751](git.assets/image-20200104214400751.png)
-
-![image-20200104214842972](git.assets/image-20200104214842972.png)
-
-可以选择open in deesktop会自动clone下载，或选择下载zip压缩文件，或选择复制https协议的URL或SSH协议
-
-![image-20200104215107731](git.assets/image-20200104215107731.png)
-
-完成后会在clone的目录下出现仓库名称的文件夹
+## 2.git add
 
 ### 文件跟踪及忽略
 
@@ -437,6 +471,16 @@ git diff比较的是工作目录中当前文件和暂存区快照之间的差异
 
 ![image-20200105093844819](git.assets/image-20200105093844819.png)
 
+### 移除暂存区文件
+
+rm 文件名.类型移除工作区文件
+
+git rm --cache 文件名.文件类型，停止跟踪文件，文件依旧存在工作区，同时在add命令时已将数据对象加入git仓库，完整复制。
+
+git rm -f 文件名.类型， 此时文件将会被移出暂存区，文件从文件夹中删除。
+
+## 3.git commit
+
 ### 提交
 
 git commit -m'描述目的'
@@ -451,17 +495,7 @@ git commit -a将未跟踪文件同时跟踪add和提交commit
 
 
 
-###  克隆已有仓库
 
-http://协议
-
-git clone <url>
-
-git clone <url>  别名
-
-git://协议
-
-ssh协议
 
 ### 检查当前文件状态
 
@@ -472,11 +506,7 @@ git status --short
 
 git diff 比较当前文件和在暂存区文件的差异，即修改后未跟踪最新文件。
 
-### 移除文件
 
-git rm --cache 文件名.文件类型，停止跟踪文件，文件依旧存在
-
-git rm -f 文件名.类型， 此时文件将会被移出暂存区，文件从文件夹中删除。
 
 ### 查看提交历史
 
@@ -506,17 +536,33 @@ git remote rename origin abc   远程仓库重命名将origin修改为abc
 
 git remote rm 简名  移除远程仓库的指向 ，本质远程仓库还在，如不在未某个仓库贡献了。
 
-### 标签
+## 4.git branch
+
+### 分支
+
+git branch 分支名  创建分支
+
+在resfs/heads里存了分支名和master(此master存了当前在的分支同样所指向的commit对象)
+
+### 标签tag
+
+## 5.git merge
+
+## 6.git checkout
 
 # 五、git基本原理
 
-### git对象
+git操作是基本原理的组合，底层操作的组合形成的抽象操作
+
+## 1.git对象
 
 git 是一个内容寻址文件系统，git的核心部分是简单的键值对数据库，向数据库输入任意类型的内容会返回一个值，通过该值可以再次检索该内容。所有内容均以树对象和数据对象的形式存储，树对象存储文件名，数据对象存储数据内容。树对象对应于unix目录项，数据对象对应文件内容。一个树对象包含一条或多条树对象记录tree enrty，每条记录含义一个指向数据对象或者子树对象SHA-1指针，以及相应的模式、类型、文件名信息。
 
 git都是以数据内容的哈希值做索引而不是文件名。
 
-#### 数据对象
+git只添加数据，不删除和修改数据，而是保持修改后和修改前的版本达到可以溯回历史版本的效果。
+
+### 数据对象
 
 往git数据库存入文本echo "123" | git hash-object -w --stdin
 
@@ -535,13 +581,11 @@ git都是以数据内容的哈希值做索引而不是文件名。
 
 ![](git.assets/image-20200105141128138.png)
 
----
-
-#### 树对象tree object
+### 树对象tree object
 
 主要解决文件名保存的问题，允许将多个文件组织到一起。
 
-#### 提交对象
+### 提交对象
 
 树对象代表了跟踪的快照，提交对象保存了保存快照的人，时间，和原因,分支和tag指向commit对象,，commit对象指向树对象，树对象指向数据对象
 
@@ -559,17 +603,29 @@ orig_head保存master分支所指commit对象，在创建分支时出现，
 
 head存储了refs/heads/当前所在分支名
 
-### git钩子
+## 2.三种状态
 
-### 分支
+使用git status文件可能处于这三种状态之一：
 
-git branch 分支名  创建分支
+* 已提交committed：已提交表示已经创建了提交对象和树对象即快照
+* 已修改modified：已修改表示修改了文件
+* 已暂存staged：已暂存表示数据已经副本为数据对象存在了git仓库中并加入到staged下次提交的快照列表中
 
-在resfs/heads里存了分支名和master(此master存了当前在的分支同样所指向的commit对象)
+三个工作区域：
+
+* git仓库(git_dir)：保存项目元数据和对象数据库的地方
+* 工作目录(work tree)：当前版本在数据库中的副本
+* 暂存区域(stage)：一个保存下次提交的文件列表信息，也称索引
+
+![image-20200107230211132](git.assets/image-20200107230211132.png)
 
 
 
-### git参考
+
+
+
+
+
 
 # 名词
 
