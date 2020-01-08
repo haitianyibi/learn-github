@@ -326,17 +326,22 @@ git config --list或使用git config <key>对某一项配置检查，如：git  
 
 config文件包含特定配置选项， 
 
+git help config获取config命令的手册，以浏览器打开或者git config --help
+
+系统gitconfig所在位置：c:\\programfiles\git\etc\gitconfig
+
+用户gitconfig所在位置：C:\Users\Administrator\.gitconfig
+
+项目config所在位置：项目目录\\.git\config
+
 ### 获取帮助
 
 git help <verb>  
 git <verb> --help  
-git help config获取config命令的手册，以浏览器打开或者git config --help
-
-
 
 ## 2.git add
 
-### 文件跟踪及忽略
+### 文件跟踪
 
 查看文件状态使用git status
 
@@ -419,7 +424,7 @@ git status也会出现这样信息：nothing to commit ,working directory clean�
 
 
 
-创建.gitignore文件。
+### 创建.gitignore文件。
 
 #表示注释，每一行指定一个忽略规则，并且忽略规则有[优先级参考](https://www.cnblogs.com/kevingrace/p/5690241.html)
 
@@ -459,9 +464,17 @@ git checkout -- 文件名.类型   撤销提交，返回上一次提交状态。
 
 git commit -a将未跟踪文件同时跟踪add和提交commit
 
+### 修改提交信息
 
+git commit --amend
 
+撤销上次提交信息重新提交
 
+git commit -m'信息'
+
+git add 遗漏的文件
+
+git commit amend
 
 ### 检查当前文件状态
 
@@ -472,35 +485,28 @@ git status --short
 
 git diff 比较当前文件和在暂存区文件的差异，即修改后未跟踪最新文件。
 
-
-
 ### 查看提交历史
 
 git log 
+
+* 提交哈希、提交者、日期、提交详情
+
+-p:显示提交内容差异
+
+-2：显示最近两次提交，该数字可以为任何整数
+
+--stat:在每次提交下面显示所有被修改过的文件，被移除、添加的文件
+
+--pretty:指定默认格式显示提交历史
+
+* oneline:每个提交放在一行显示
+* format
 
 ### 对文件改名字
 
 git mv 旧名.类型  新名.类型
 
 ![image-20200105094811491](git.assets/image-20200105094811491.png)
-
-### 远程仓库
-
-git remote  -v 显示origin表示克隆仓库的默认名字，已经克隆到本地。-v显示URL。
-
-git remote add 简写名字 URL 添加远程仓库并设置简名代替URL，
-
-git fetch 简名  拉取简名代替的URL内容。仅将远程仓库复制本地不会合并修改当前工作。
-
-使用git clone 会自动克隆仓库并添加远程仓库，设置简名origin
-
-git pull origin master 备份到服务器master分支，若以有人先pull后，本地版本和服务器版本不同，需要拉取下来合并后才能推送，
-
-git remote show origin 显示更多远程仓库信息。
-
-git remote rename origin abc   远程仓库重命名将origin修改为abc
-
-git remote rm 简名  移除远程仓库的指向 ，本质远程仓库还在，如不在未某个仓库贡献了。
 
 ## 4.git branch
 
@@ -510,11 +516,21 @@ git branch 分支名  创建分支
 
 在resfs/heads里存了分支名和master(此master存了当前在的分支同样所指向的commit对象)
 
+分支实际指向提交对象
+
+
+
 ### 标签tag
 
 ## 5.git merge
 
+合并分支
+
+rebase将分支的所有修改移到另一个分支上进行整合，
+
 ## 6.git checkout
+
+撤销文件的修改
 
 ## 7.git remote(远程仓库)
 
@@ -553,6 +569,24 @@ git升级本质也是git clone将最新版本的git下载到本地
 将会出现git文件夹，子文件夹包含.git文件夹，该方法速度较慢建议在官网直接下载最新版安装替换
 
 ![image-20200104200413213](git.assets/image-20200104200413213.png)
+
+### 远程仓库命名
+
+git remote  -v 显示origin表示克隆仓库的默认名字，已经克隆到本地。-v显示URL。
+
+git remote add 简写名字 URL 添加远程仓库并设置简名代替URL，
+
+git fetch 简名  拉取简名代替的URL内容。仅将远程仓库复制本地不会合并修改当前工作。
+
+使用git clone 会自动克隆仓库并添加远程仓库，设置简名origin
+
+git pull origin master 备份到服务器master分支，若以有人先pull后，本地版本和服务器版本不同，需要拉取下来合并后才能推送，
+
+git remote show origin 显示更多远程仓库信息。
+
+git remote rename origin abc   远程仓库重命名将origin修改为abc
+
+git remote rm 简名  移除远程仓库的指向 ，本质远程仓库还在，如不在未某个仓库贡献了。
 
 # 五、git基本原理
 
